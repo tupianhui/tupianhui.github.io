@@ -1,89 +1,129 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>贴画图片资源合集</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贴画资源合集</title>
+    <!-- Google Fonts 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
+        /* 全局样式 */
+        body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f0f2f5;
+            color: #333;
         }
-        body {
-            font-family: "Microsoft YaHei";
-            background: #f5f5f5;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        h1 {
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 30px 0;
             text-align: center;
-            margin-bottom: 30px;
-            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .category {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        header h1 {
+            margin: 0;
+            font-weight: 700;
         }
-        .category h2 {
-            font-size: 18px;
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: #1a73e8;
             margin-bottom: 15px;
-            color: #0066cc;
+            border-left: 5px solid #1a73e8;
+            padding-left: 10px;
         }
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+
+        /* 卡片列表 */
+        .card-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            list-style: none;
         }
-        .links a {
-            background: #e6f7ff;
-            padding: 8px 15px;
-            border-radius: 6px;
+
+        .card-list li {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .card-list a {
             text-decoration: none;
-            color: #333;
+            color: #1a73e8;
+            font-weight: 500;
         }
-        .links a:hover {
-            background: #91d5ff;
+
+        .card-list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 500px) {
+            .card-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>我的资源合集站</h1>
+<header>
+    <h1>贴画资源合集</h1>
+</header>
 
-    <div class="category">
-        <h2>📚 学习资料</h2>
-        <div class="links">
-            <a href=" " target="_blank">B站</a >
-            <a href="https://www.baidu.com" target="_blank">百度</a >
-            <a href="#" target="_blank">我的资料1</a >
-            <a href="#" target="_blank">我的资料2</a >
-        </div>
-    </div>
+<main>
+    <section>
+        <h2>学习资料</h2>
+        <ul class="card-list">
+            <li><a href="https://example.com">资源1：编程教程</a></li>
+            <li><a href="https://example.com">资源2：数学笔记</a></li>
+            <li><a href="https://example.com">资源3：英语资料</a></li>
+        </ul>
+    </section>
 
-    <div class="category">
-        <h2>🛠️ 工具网站</h2>
-        <div class="links">
-            <a href="#" target="_blank">在线工具1</a >
-            <a href="#" target="_blank">在线工具2</a >
-            <a href="#" target="_blank">图片压缩</a >
-        </div>
-    </div>
+    <section>
+        <h2>工具与软件</h2>
+        <ul class="card-list">
+            <li><a href="https://example.com">资源4：图片处理软件</a></li>
+            <li><a href="https://example.com">资源5：音频编辑软件</a></li>
+        </ul>
+    </section>
 
-    <div class="category">
-        <h2>🎬 影视动漫</h2>
-        <div class="links">
-            <a href="#" target="_blank">影视站1</a >
-            <a href="#" target="_blank">动漫站1</a >
-        </div>
-    </div>
-</div>
+    <section>
+        <h2>其他资源</h2>
+        <ul class="card-list">
+            <li><a href="https://example.com">资源6：有趣网站</a></li>
+            <li><a href="https://example.com">资源7：免费素材</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    &copy; 2026 我的资源合集
+</footer>
 
 </body>
 </html>
