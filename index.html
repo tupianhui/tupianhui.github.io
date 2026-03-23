@@ -6,140 +6,147 @@
     <title>贴画资源合集 🎨</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 全局样式 - 贴画主题清新风 */
+        /* 全局样式 - 大型素材站风格 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Noto Sans SC', 'Comic Neue', sans-serif;
-            background: linear-gradient(120deg, #fdf2f8 0%, #f5f5f5 100%);
+            font-family: 'Noto Sans SC', sans-serif; /* 去掉手写体，更专业 */
+            background: linear-gradient(120deg, #e8f4f8 0%, #f0f8fb 50%, #eaf6fa 100%);
             color: #333;
             min-height: 100vh;
+            scroll-behavior: smooth;
+            padding-bottom: 50px;
         }
-        /* 头部样式 - 贴画感圆角+渐变 */
+        /* 头部 - 更厚重的大型网站风格 */
         header {
-            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            background: linear-gradient(90deg, #42c2ff 0%, #78e08f 99%, #86e3ce 100%);
             color: white;
-            padding: 40px 0;
+            padding: 60px 0; /* 加高头部，更大气 */
             text-align: center;
-            box-shadow: 0 4px 12px rgba(255, 154, 158, 0.3);
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(66, 194, 255, 0.3);
+            margin-bottom: 50px; /* 加大间距 */
         }
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            opacity: 0.9;
         }
 
-        /* 主内容区 - 更柔和的透明感 */
-        main {
-            max-width: 900px;
-            margin: 0 auto 40px;
-            padding: 30px 25px;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        /* 容器 - 大型网站的宽屏适配 */
+        .container {
+            max-width: 1200px; /* 加宽容器，更像大型网站 */
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* 分类标题 - 贴画风装饰 */
-        h2 {
-            color: #e85d75;
-            margin: 30px 0 20px;
-            border-left: 6px solid #ff9a9e;
-            padding: 8px 15px;
-            font-size: 1.5rem;
-            background-color: #fff0f3;
-            border-radius: 0 10px 10px 0;
+        /* 分类标题 - 更醒目 */
+        .category-title {
+            color: #289672;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 60px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #42c2ff;
+            display: flex;
+            align-items: center;
+        }
+        .category-title i {
+            font-style: normal;
+            margin-right: 10px;
+            font-size: 2rem;
         }
 
-        /* 卡片列表 - 贴画风格优化 */
-        .card-list {
+        /* 核心：大图卡片网格 - 大型网站风格 */
+        .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 18px;
-            padding: 0;
-            list-style: none;
+            gap: 25px; /* 加大卡片间距，更透气 */
         }
-
-        .card-list li {
+        /* 大图卡片样式 */
+        .resource-card {
             background-color: #fff;
-            padding: 20px 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #fef0f3;
-            position: relative;
+            border-radius: 12px;
             overflow: hidden;
-        }
-
-        /* 卡片hover动效 - 更灵动 */
-        .card-list li:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 20px rgba(255, 154, 158, 0.2);
-        }
-
-        /* 卡片小装饰 - 贴画感 */
-        .card-list li::before {
-            content: "🎀";
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1rem;
-            opacity: 0.5;
-        }
-        /* 联系我们模块单独装饰 */
-        .contact-list li::before {
-            content: "📩";
-        }
-
-        .card-list a {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
             text-decoration: none;
-            color: #e85d75;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: color 0.2s;
-            display: block;
-            padding-right: 25px; /* 避开装饰图标 */
+            color: #333;
+        }
+        /* hover动效 - 大型网站的高级感 */
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(66, 194, 255, 0.2);
+        }
+        /* 卡片图片 - 核心：大图展示 */
+        .card-img {
+            width: 100%;
+            height: 200px; /* 固定图片高度，统一视觉 */
+            object-fit: cover; /* 图片自适应，不拉伸 */
+            background-color: #f8f9fa;
+            transition: transform 0.4s ease;
+        }
+        .resource-card:hover .card-img {
+            transform: scale(1.05); /* 图片轻微放大，更有动感 */
+        }
+        /* 卡片文字信息 */
+        .card-info {
+            padding: 20px;
+        }
+        .card-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #289672;
+            margin-bottom: 8px;
+        }
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
         }
 
-        .card-list a:hover {
-            color: #d14860;
-            text-decoration: none;
-            transform: translateX(5px);
-            display: block;
-        }
-
-        /* 底部样式 - 柔和化 */
+        /* 底部样式 */
         footer {
             text-align: center;
-            color: #999;
-            padding: 30px 0;
-            margin-top: 20px;
-            font-size: 0.95rem;
+            color: #666;
+            padding: 40px 0;
+            margin-top: 80px;
+            font-size: 1rem;
             background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 -6px 18px rgba(66, 194, 255, 0.1);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
 
-        /* 响应式调整 - 适配手机 */
-        @media (max-width: 500px) {
-            .card-list {
-                grid-template-columns: 1fr;
+        /* 响应式适配 - 大屏/手机都适配 */
+        @media (min-width: 1000px) {
+            .card-grid {
+                grid-template-columns: repeat(4, 1fr); /* 大屏4列，更像大型网站 */
+            }
+        }
+        @media (max-width: 999px) and (min-width: 600px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr); /* 平板2列 */
+            }
+        }
+        @media (max-width: 599px) {
+            .card-grid {
+                grid-template-columns: 1fr; /* 手机1列 */
             }
             header h1 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
-            main {
-                margin: 0 15px 30px;
-                padding: 20px 15px;
-            }
-            h2 {
-                font-size: 1.3rem;
+            .category-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -148,51 +155,153 @@
 
 <header>
     <h1>贴画资源合集 🎨</h1>
+    <p>精选优质贴画素材 | 专业制作工具 | 零基础学习教程</p>
 </header>
 
-<main>
-    <section>
-        <h2>✨ 贴画素材库</h2>
-        <ul class="card-list">
-            <li><a href="https://www.flaticon.com/stickers">Flaticon 免费贴纸素材</a></li>
-            <li><a href="https://www.freepik.com/stickers/free-packs">Freepik 贴纸模板</a></li>
-            <li><a href="https://www.creativefabrica.com/stickers/">Creative Fabrica 创意贴画</a></li>
-            <li><a href="https://designbundles.net/collections/free-stickers">Design Bundles 免费贴画包</a></li>
-            <li><a href="https://www.vexels.com/stickers/">Vexels 高品质贴画素材</a></li>
-            <li><a href="https://www.pngtree.com/free-stickers/">PNG树 免费贴画（中文）</a></li>
-            <li><a href="https://www.canva.cn/templates/stickers/">Canva可画 贴画模板（中文）</a></li>
-            <li><a href="https://zh.freepngimg.com/stickers/">FreePNGImg 免费贴画PNG</a></li>
-        </ul>
-    </section>
+<div class="container">
+    <!-- 1. 贴画素材库 - 大图卡片 -->
+    <h2 class="category-title">🖼️ 贴画素材库</h2>
+    <div class="card-grid">
+        <!-- 素材1 -->
+        <a href="https://www.flaticon.com/stickers" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/flaticon/800/600" class="card-img" alt="Flaticon 免费贴纸素材">
+            <div class="card-info">
+                <div class="card-name">Flaticon 免费贴纸素材</div>
+                <div class="card-desc">百万级免费矢量贴画，无版权可商用</div>
+            </div>
+        </a>
+        <!-- 素材2 -->
+        <a href="https://www.freepik.com/stickers/free-packs" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/freepik/800/600" class="card-img" alt="Freepik 贴纸模板">
+            <div class="card-info">
+                <div class="card-name">Freepik 贴纸模板</div>
+                <div class="card-desc">创意贴画模板，支持自定义编辑</div>
+            </div>
+        </a>
+        <!-- 素材3 -->
+        <a href="https://www.creativefabrica.com/stickers/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/creative/800/600" class="card-img" alt="Creative Fabrica 创意贴画">
+            <div class="card-info">
+                <div class="card-name">Creative Fabrica 创意贴画</div>
+                <div class="card-desc">艺术感贴画素材，适合个性化创作</div>
+            </div>
+        </a>
+        <!-- 素材4 -->
+        <a href="https://designbundles.net/collections/free-stickers" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/design/800/600" class="card-img" alt="Design Bundles 免费贴画包">
+            <div class="card-info">
+                <div class="card-name">Design Bundles 免费贴画包</div>
+                <div class="card-desc">打包下载贴画素材，省时高效</div>
+            </div>
+        </a>
+        <!-- 素材5 -->
+        <a href="https://www.vexels.com/stickers/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/vexels/800/600" class="card-img" alt="Vexels 高品质贴画素材">
+            <div class="card-info">
+                <div class="card-name">Vexels 高品质贴画素材</div>
+                <div class="card-desc">高清无损贴画，商用需授权</div>
+            </div>
+        </a>
+        <!-- 素材6 -->
+        <a href="https://www.pngtree.com/free-stickers/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/pngtree/800/600" class="card-img" alt="PNG树 免费贴画（中文）">
+            <div class="card-info">
+                <div class="card-name">PNG树 免费贴画（中文）</div>
+                <div class="card-desc">中文免费素材站，贴画分类齐全</div>
+            </div>
+        </a>
+        <!-- 素材7 -->
+        <a href="https://www.canva.cn/templates/stickers/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/canva/800/600" class="card-img" alt="Canva可画 贴画模板（中文）">
+            <div class="card-info">
+                <div class="card-name">Canva可画 贴画模板</div>
+                <div class="card-desc">在线编辑贴画，零基础也能做</div>
+            </div>
+        </a>
+        <!-- 素材8 -->
+        <a href="https://zh.freepngimg.com/stickers/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/freepng/800/600" class="card-img" alt="FreePNGImg 免费贴画PNG">
+            <div class="card-info">
+                <div class="card-name">FreePNGImg 免费贴画PNG</div>
+                <div class="card-desc">透明背景贴画，直接下载使用</div>
+            </div>
+        </a>
+    </div>
 
-    <section>
-        <h2>✂️ 贴画制作工具</h2>
-        <ul class="card-list">
-            <li><a href="https://pc.meitu.com/">美图秀秀 - 贴画编辑</a></li>
-            <li><a href="https://www.capcut.cn/">剪映 - 视频贴画素材</a></li>
-        </ul>
-    </section>
+    <!-- 2. 贴画制作工具 - 大图卡片 -->
+    <h2 class="category-title">🛠️ 贴画制作工具</h2>
+    <div class="card-grid">
+        <!-- 工具1 -->
+        <a href="https://pc.meitu.com/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/meitu/800/600" class="card-img" alt="美图秀秀 - 贴画编辑">
+            <div class="card-info">
+                <div class="card-name">美图秀秀 - 贴画编辑</div>
+                <div class="card-desc">傻瓜式操作，快速添加/制作贴画</div>
+            </div>
+        </a>
+        <!-- 工具2 -->
+        <a href="https://www.capcut.cn/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/capcut/800/600" class="card-img" alt="剪映 - 视频贴画素材">
+            <div class="card-info">
+                <div class="card-name">剪映 - 视频贴画素材</div>
+                <div class="card-desc">视频贴画素材库，支持动态贴画</div>
+            </div>
+        </a>
+    </div>
 
-    <section>
-        <h2>📚 学习参考资源</h2>
-        <ul class="card-list">
-            <li><a href="https://www.bilibili.com/">哔哩哔哩 - 贴画教程</a></li>
-            <li><a href="https://www.icourse163.org/">中国大学MOOC - 设计相关课程</a></li>
-        </ul>
-    </section>
+    <!-- 3. 学习参考资源 - 大图卡片 -->
+    <h2 class="category-title">📖 学习参考资源</h2>
+    <div class="card-grid">
+        <!-- 学习1 -->
+        <a href="https://www.bilibili.com/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/bilibili/800/600" class="card-img" alt="哔哩哔哩 - 贴画教程">
+            <div class="card-info">
+                <div class="card-name">哔哩哔哩 - 贴画教程</div>
+                <div class="card-desc">海量免费贴画制作教程，零基础入门</div>
+            </div>
+        </a>
+        <!-- 学习2 -->
+        <a href="https://www.icourse163.org/" class="resource-card" target="_blank">
+            <img src="https://picsum.photos/seed/icourse/800/600" class="card-img" alt="中国大学MOOC - 设计相关课程">
+            <div class="card-info">
+                <div class="card-name">中国大学MOOC - 设计课程</div>
+                <div class="card-desc">专业设计课程，提升贴画创作能力</div>
+            </div>
+        </a>
+    </div>
 
-      <section>
-        <h2>📞 联系我们</h2>
-        <ul class="card-list contact-list">
-            <li><a href="javascript:void(0)">贴画定制服务 - 微信：tiehua6688</a></li>
-            <li><a href="javascript:void(0)">智能打印设备 - 邮箱：print@tiehua.com</a></li>
-            <li><a href="javascript:void(0)">联系方式 - 电话：138XXXX8888</a></li>
-        </ul>
-    </section>
-</main>
+    <!-- 4. 联系我们 - 大图卡片 -->
+    <h2 class="category-title">📞 联系我们</h2>
+    <div class="card-grid">
+        <!-- 联系1 -->
+        <a href="javascript:void(0)" class="resource-card">
+            <img src="https://picsum.photos/seed/custom/800/600" class="card-img" alt="贴画定制服务">
+            <div class="card-info">
+                <div class="card-name">贴画定制服务</div>
+                <div class="card-desc">微信：tiehua6688 | 个性化贴画定制</div>
+            </div>
+        </a>
+        <!-- 联系2 -->
+        <a href="javascript:void(0)" class="resource-card">
+            <img src="https://picsum.photos/seed/print/800/600" class="card-img" alt="智能打印设备">
+            <div class="card-info">
+                <div class="card-name">智能打印设备</div>
+                <div class="card-desc">邮箱：print@tiehua.com | 打印设备咨询</div>
+            </div>
+        </a>
+        <!-- 联系3 -->
+        <a href="javascript:void(0)" class="resource-card">
+            <img src="https://picsum.photos/seed/contact/800/600" class="card-img" alt="联系方式">
+            <div class="card-info">
+                <div class="card-name">联系方式</div>
+                <div class="card-desc">电话：138XXXX8888 | 工作日9:00-18:00</div>
+            </div>
+        </a>
+    </div>
+</div>
 
 <footer>
-    &copy; 2026 汇集贴画，分享美好 💖
+    &copy; 2026 贴画资源合集 - 所有素材仅供学习交流使用 💖
 </footer>
 
 </body>
